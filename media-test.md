@@ -12,3 +12,9 @@ http://www.imdb.com/title/tt0118929/?ref_=tt_rec_tti
 http://www.imdb.com/title/tt0114558/
 http://www.imdb.com/title/tt0096754/?ref_=tt_rec_tti
 http://www.imdb.com/title/tt0078748/
+Solace (2015)
+Pete's Dragon (2016)
+Zero Days (2016)
+Little Sister (2016)
+Bleed for This (2016)
+Christine (2016)

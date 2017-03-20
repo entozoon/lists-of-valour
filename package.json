@@ -1,0 +1,20 @@
+{
+	"name": "lists-of-valour",
+	"version": "0.0.1",
+	"description": "Store a list of media",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron ."
+	},
+	"repository": "https://github.com/entozoon/lists-of-valour",
+	"keywords": [
+		"lists",
+		"imdb",
+	"movies"
+	],
+	"author": "MichaelCook <entozoon@gmail.com>",
+	"license": "CC0-1.0",
+	"devDependencies": {
+		"electron": "^1.4.1"
+	}
+}
