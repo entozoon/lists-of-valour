@@ -14,3 +14,15 @@ Do you, like me, have dozens of IMDB tabs open as reminders of films and shows t
 ## When?
 
 Who knows! Like all my tools, I build them from necessity (so, fervently but.. sporadically).
+
+## Installation (dev)
+
+	yarn install
+
+## Compile and Run (dev)
+
+	npm run watch
+
+## Compile for Distribution (production)
+
+	electron-packager . --out=dist
