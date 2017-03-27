@@ -16,13 +16,13 @@ Do you, like me, have dozens of IMDB tabs open as reminders of films and shows t
 Who knows! Like all my tools, I build them from necessity (so, fervently but.. sporadically).
 
 ## Installation (dev)
-
+	npm install -g electron-packager
 	yarn install
 
 ## Compile and Run (dev)
 
-	npm run watch
+	npm run dev
 
 ## Compile for Distribution (production)
 
-	electron-packager . --out=dist
+	npm run dist

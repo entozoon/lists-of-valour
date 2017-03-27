@@ -2,9 +2,12 @@
   "name": "lists-of-valour",
   "version": "0.0.1",
   "description": "Store a list of media",
-  "main": "main.js",
+  "main": "./app/main.js",
   "scripts": {
-    "start": "electron ."
+    "refresh": "electron .",
+    "dev": "start lapis && npm-watch",
+    "dev-alt": "npm-watch | lapis",
+    "dist": "electron-packager . --out=dist --overwrite --version-string.FileDescription=electron-app-template"
   },
   "repository": "https://github.com/entozoon/lists-of-valour",
   "keywords": [
@@ -13,23 +16,21 @@
     "movies"
   ],
   "author": "MichaelCook <entozoon@gmail.com>",
-  "license": "CC0-1.0",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^1.4.1",
     "electron-packager": "^8.6.0"
   },
   "dependencies": {
+    "electron-packager": "^8.6.0",
+    "lapis-compiler": "^1.6.4",
     "npm-watch": "^0.1.8"
-  },
-  "scripts": {
-      "refresh": "electron .",
-      "watch": "npm-watch"
   },
   "watch": {
     "refresh": {
-        "patterns": "*",
-        "extensions": "js,jsx,css",
-        "quiet": true
-	}
+      "patterns": "*",
+      "extensions": "js,jsx,css",
+      "quiet": true
+    }
   }
 }

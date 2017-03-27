@@ -1,0 +1,36 @@
+{
+	"from": "../../",
+	"css": [
+		{
+			"watch": [
+				"src/scss/**/*.css",
+				"src/scss/**/*.scss"
+			],
+			"src": "src/scss/app.scss",
+			"dest": "./app",
+			"filename": "app.css",
+			"modes": {
+			},
+			"cleanCssOptions": {
+			}
+		}
+	],
+	"js": [
+		{
+			"watch": [
+				"src/js/**/*.js"
+			],
+			"src": "src/js/main.js",
+			"dest": "./app",
+			"filename": "main.js"
+		},
+		{
+			"watch": [
+				"src/js/**/*.js"
+			],
+			"src": "src/js/renderer.js",
+			"dest": "./app",
+			"filename": "renderer.js"
+		}
+	]
+}
