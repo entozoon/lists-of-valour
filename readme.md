@@ -6,10 +6,13 @@ A cross-platform app to store lists of things.
 
 Do you, like me, have dozens of IMDB tabs open as reminders of films and shows that you might like to watch? Well fret ye no more friend, for this will be a simple way to save them conveniently and have them display in a sortable list with imdb ratings, posters, notes and suchlike.
 
+NB: Might shift to 'Movies of Valour' with 'Lists of' as a dependency :)
+
 ## Technologies
 
-- electron.io
-- react.js
+- Electron.io
+- React.js
+- Firebase
 
 ## When?
 
@@ -17,11 +20,18 @@ Who knows! Like all my tools, I build them from necessity (so, fervently but.. s
 
 ## Installation (dev)
 	npm install -g electron-packager
+	yarn global add gulp lapis-compiler
 	yarn install
 
 ## Compile and Run (dev)
 
+Windows
+
 	npm run dev
+
+Linux / OS X
+
+	npm run dev-alt
 
 ## Compile for Distribution (production)
 
