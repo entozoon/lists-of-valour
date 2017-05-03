@@ -1,49 +1,75 @@
 import React from 'react';
 
-class Tinker extends React.Component {
+class Movie extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {
-      value: (this.props.value ? this.props.value : '')
-    }
+    this.state = props.movie;
   }
-  // hands are typing!
-  onChangeValue(e) {
-    this.setState({
-      value: e.target.value
-    });
-  }
-  render() {
-    //const { name } = this.props;
+  render () {
     return (
       <div>
-        {/*
-        <label
-          htmlFor={this.props.name}
-        >
-          {this.props.name}
-        </label>
-        */}
+        {this.state.title}
+      </div>
+    )
+  }
+}
 
-        <input
-          name={this.props.name}
-          placeholder={this.props.name}
-          value={this.state.value}
-          onChange={this.onChangeValue.bind(this)}
-        />
+class Movies extends React.Component {
+  constructor (props) {
+    super(props);
 
-        <small> ⇒ {this.state.value}</small>
+    this.state = {
+      movies: []
+    }
+
+    this.getMovies();
+  }
+
+  getMovies () {
+    var movieRef = this.props.database.ref('movies/');
+    movieRef.on('value', snapshot => {
+      const movies = this.state.movies.slice(); // slice() for immutability
+      snapshot.forEach(movie => {
+        //console.log(movie.key);
+        //console.log(movie.val());
+        movies.push(movie.val());
+      });
+      this.setState({
+        movies: movies
+      });
+    });
+  }
+
+  render () {
+    const movies = [];
+    this.state.movies.map((movie, i) => {
+      movies.push(<Movie key={i} movie={movie} />);
+    });
+
+    return (
+      <div>
+        {movies}
       </div>
     )
   }
 }
 
 class AppComponent extends React.Component {
+  constructor (props) {
+    super(props);
+    /*
+    var movieRef = database.ref('movies/');
+    movieRef.on('value', snapshot => {
+      console.log(snapshot.key);
+      console.log(snapshot.val());
+    });
+    */
+  }
+
   render () {
     return (
       <div>
-        <Tinker name="Hail who?" />
-        <Tinker name="Hail whom?" value="Satan" />
+        <Movies database={this.props.database} />
       </div>
     );
   }

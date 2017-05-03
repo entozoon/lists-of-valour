@@ -1,0 +1,12 @@
+{
+  "movies" : {
+    "movieOne": {
+        "title" : true,
+        "rating": true
+    },
+    "movieTwo": {
+        "title" : "rad",
+        "rating": 6.7
+    }
+  }
+}
