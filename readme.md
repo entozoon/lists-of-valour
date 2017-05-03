@@ -19,19 +19,13 @@ NB: Might shift to 'Movies of Valour' with 'Lists of' as a dependency :)
 Who knows! Like all my tools, I build them from necessity (so, fervently but.. sporadically).
 
 ## Installation (dev)
-	npm install -g electron-packager
-	yarn global add gulp lapis-compiler
+
+	npm install -g electron-packager sass node-sass
 	yarn install
 
 ## Compile and Run (dev)
 
-Windows
-
 	npm run dev
-
-Linux / OS X
-
-	npm run dev-alt
 
 ## Compile for Distribution (production)
 
