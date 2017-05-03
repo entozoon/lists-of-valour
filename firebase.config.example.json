@@ -1,0 +1,8 @@
+{
+  "apiKey": "AIzaSyARNxGivcsw4rIfQBpB21kvHjt-oq04c7c",
+  "authDomain": "movie-lists-of-valour.firebaseapp.com",
+  "databaseURL": "https://movie-lists-of-valour.firebaseio.com",
+  "projectId": "movie-lists-of-valour",
+  "storageBucket": "movie-lists-of-valour.appspot.com",
+  "messagingSenderId": "263720096167"
+}
