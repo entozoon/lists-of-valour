@@ -9,13 +9,14 @@ class Movies extends React.Component {
       movies: []
     }
 
-    this.getMovies();
+    this.getMoviesAndKeepUpdated();
   }
 
   // Rewrite this elsewhere as a pure function, right?
-  getMovies () {
+  getMoviesAndKeepUpdated () {
     var movieRef = this.props.database.ref('movies/');
     movieRef.on('value', snapshot => {
+      // This fires whenever the db changes! :O
       const movies = this.state.movies.slice(); // slice() for immutability
       snapshot.forEach(movie => {
         // snatch up the data and jam in the key too
@@ -23,6 +24,7 @@ class Movies extends React.Component {
         movieObj.key = movie.key;
         movies.push(movieObj);
       });
+      console.log(movies);
       this.setState({
         movies: movies
       });

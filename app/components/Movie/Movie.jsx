@@ -9,6 +9,8 @@ class Movie extends React.Component {
   // Rewrite this elsewhere as a pure function, right?
   setMovie () {
     let updates = {};
+    // THIS IS WRONG. Probably a numeric key. Calling update here creates new movies
+    // Or does it? I mean, they're not saving.. hmm.
     updates['/movies/' + this.props.movie.key + '/title'] = this.state.title;
     this.props.database.ref().update(updates);
   }
