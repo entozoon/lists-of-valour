@@ -17,7 +17,8 @@ class Movies extends React.Component {
     var movieRef = this.props.database.ref('movies/');
     movieRef.on('value', snapshot => {
       // This fires whenever the db changes! :O
-      const movies = this.state.movies.slice(); // slice() for immutability
+      //const movies = this.state.movies.slice(); // slice() for immutability
+      const movies = []; // blank the array, as they pour in on update
       snapshot.forEach(movie => {
         // snatch up the data and jam in the key too
         const movieObj = movie.val();
