@@ -1,18 +1,5 @@
 import React from 'react';
-
-class Movie extends React.Component {
-  constructor (props) {
-    super(props);
-    this.state = props.movie;
-  }
-  render () {
-    return (
-      <div>
-        {this.state.title}
-      </div>
-    )
-  }
-}
+import Movie from '../Movie/Movie';
 
 class Movies extends React.Component {
   constructor (props) {
@@ -54,28 +41,4 @@ class Movies extends React.Component {
   }
 }
 
-class AppComponent extends React.Component {
-  constructor (props) {
-    super(props);
-    /*
-    var movieRef = database.ref('movies/');
-    movieRef.on('value', snapshot => {
-      console.log(snapshot.key);
-      console.log(snapshot.val());
-    });
-    */
-  }
-
-  render () {
-    return (
-      <div>
-        <Movies database={this.props.database} />
-      </div>
-    );
-  }
-}
-
-AppComponent.defaultProps = {
-};
-
-export default AppComponent;
+export default Movies;
