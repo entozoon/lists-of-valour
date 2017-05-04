@@ -12,14 +12,16 @@ class Movies extends React.Component {
     this.getMovies();
   }
 
+  // Rewrite this elsewhere as a pure function, right?
   getMovies () {
     var movieRef = this.props.database.ref('movies/');
     movieRef.on('value', snapshot => {
       const movies = this.state.movies.slice(); // slice() for immutability
       snapshot.forEach(movie => {
-        //console.log(movie.key);
-        //console.log(movie.val());
-        movies.push(movie.val());
+        // snatch up the data and jam in the key too
+        const movieObj = movie.val();
+        movieObj.key = movie.key;
+        movies.push(movieObj);
       });
       this.setState({
         movies: movies
@@ -30,7 +32,8 @@ class Movies extends React.Component {
   render () {
     const movies = [];
     this.state.movies.map((movie, i) => {
-      movies.push(<Movie key={i} movie={movie} />);
+      // Preeeetty sure I shouldn't be tossing the database ref down
+      movies.push(<Movie key={i} movie={movie} database={this.props.database} />);
     });
 
     return (
