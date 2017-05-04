@@ -25,8 +25,6 @@ class Movie extends React.Component {
   }
 
   render () {
-    if (!this.state.title) return null;
-
     return (
       <div>
         <input
